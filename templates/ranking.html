@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Ranking{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Só os melhores</h1>
+<button onclick="window.location.href='/'" class="btn btn-primary" style="float:right; margin-right: 20px;">Voltar</button>
+{% for x in object_list %}
+{% for y in x %}
+<div class="block-color text-relative" style="text-align: center;">
+	<h4 style="text-transform: capitalize">{{y.userName}}</h4>
+    <p>Pontos: {{y.Individualpontos}}</p>
+
+  </div>
+  
+{% endfor %}
+{% endfor %}
+
+
+
+{% endblock %}

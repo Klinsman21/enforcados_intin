@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Jogue!{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        {% for x in object_list %}
+            {% if x.allTrue == True %}
+                <META http-equiv="refresh" content="0;URL=/game-sucess/">
+            {% endif %}
+
+            {% if x.image == 7 %}
+                <META http-equiv="refresh" content="0;URL=/game-fail/">
+            {% endif %}
+        {% endfor %}
+        <div style="text-align: center;">
+        <h1>Bem vindo a partida</h1><br>
+        <button style="float: right; margin-right: 20px;" style="margin: 5px;" onclick="window.location.href='/'"  class="btn btn-success">Home</button>
+        <div class="text-relative">
+            <h4>A dica é</h4>
+            {% for x in images %}
+            <p style="text-transform: capitalize">{{x.dica}}</p>
+            {% endfor %}
+        </div>
+        
+
+        {% for x in images %}
+        {% if x.image == 1 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/179/full/forca1.png?1535154206" alt="1" width="200" height="200">
+        
+        {% elif x.image == 2 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/187/full/forca2.png?1535154329" alt="1" width="200" height="200">
+        
+        {% elif x.image == 3 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/189/full/forca3.png?1535154364" alt="1" width="200" height="200">
+        
+        {% elif x.image == 4 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/190/full/forca4.png?1535154401" alt="1" width="200" height="200">
+        
+        {% elif x.image == 5 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/192/full/forca5.png?1535154444" alt="1" width="200" height="200">
+        
+        {% elif x.image == 6 %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/193/full/forca6.png?1535154470" alt="1" width="200" height="200">
+        
+        {% else %}
+            <img src="https://uploaddeimagens.com.br/images/001/577/195/full/forca7.png?1535154500" alt="1" width="200" height="200">
+        {% endif %}
+        {% endfor %}
+        
+         <table align="center">
+              <tr>
+
+                {% for object in object_list %}
+                    {% if object.visible == True %}
+                    <th style="font-size: 30px; text-transform: uppercase;">{{object.letra}}</th>
+                    {% else %}
+                        <th style="font-size: 50px;">-</th>
+                    {% endif %}
+                {% endfor %}
+              </tr>
+        </table>
+
+        <form method="POST" class="form-signin">
+            {% csrf_token %}
+            <button name="Q" value="Q" class="btn btn-secundary" type="submit">Q</button>
+            <button name="W" value="W" class="btn btn-secundary" type="submit">W</button>
+            <button name="E" value="E" class="btn btn-secundary" type="submit">E</button>
+            <button name="R" value="R" class="btn btn-secundary" type="submit">R</button>
+            <button name="T" value="T" class="btn btn-secundary" type="submit">T</button>
+            <button name="Y" value="Y" class="btn btn-secundary" type="submit">Y</button>
+            <button name="U" value="U" class="btn btn-secundary" type="submit">U</button>
+            <button name="I" value="I" class="btn btn-secundary" type="submit">I</button>
+            <button name="O" value="O" class="btn btn-secundary" type="submit">O</button>
+            <button name="P" value="P" class="btn btn-secundary" type="submit">P</button><br>
+            <br><button name="A" value="A" class="btn btn-secundary" type="submit">A</button>
+            <button name="S" value="S" class="btn btn-secundary" type="submit">S</button>
+            <button name="D" value="D" class="btn btn-secundary" type="submit">D</button>
+            <button name="F" value="F" class="btn btn-secundary" type="submit">F</button>
+            <button name="G" value="G" class="btn btn-secundary" type="submit">G</button>
+            <button name="H" value="H" class="btn btn-secundary" type="submit">H</button>
+            <button name="J" value="J" class="btn btn-secundary" type="submit">J</button>
+            <button name="K" value="K" class="btn btn-secundary" type="submit">K</button>
+            <button name="L" value="L" class="btn btn-secundary" type="submit">L</button><br>
+            <br><button name="Ç" value="Ç" class="btn btn-secundary" type="submit">Ç</button>
+            <button name="Z" value="Z" class="btn btn-secundary" type="submit">Z</button>
+            <button name="X" value="X" class="btn btn-secundary" type="submit">X</button>
+            <button name="C" value="C" class="btn btn-secundary" type="submit">C</button>
+            <button name="V" value="V" class="btn btn-secundary" type="submit">V</button>
+            <button name="B" value="B" class="btn btn-secundary" type="submit">B</button>
+            <button name="N" value="N" class="btn btn-secundary" type="submit">N</button>
+            <button name="M" value="M" class="btn btn-secundary" type="submit">M</button>
+        </form>
+        </div>
+
+        
+        
+    {% else %}
+        <META http-equiv="refresh" content="0;URL=/"> 
+    {% endif %}
+{% endblock %}

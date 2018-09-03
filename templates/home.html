@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<div id="main" class="block-color" style="text-align: center;">
+	{% if user.is_authenticated %}
+  		<h1>Enforcados INTIN</h1><br>
+  		<div style="margin-top: 10px;">
+  		<h1>Oi {{ user.username }}! Escolha uma das opções</h1><br>
+  		<button onclick="window.location.href='/create-match'" style="margin: 5px;" class="btn btn-primary">Criar nova partida</button>
+      <button onclick="window.location.href='/create-word'" style="margin: 5px;" class="btn btn-success">Criar nova palavra</button>
+      <button onclick="window.location.href='/ranking'" style="margin: 5px;" class="btn btn-warning">Ranking</button>
+  		<button onclick="window.location.href='/accounts/logout'" style="margin: 5px;" class="btn btn-danger">Sair</button>
+  		</div>
+  		
+	{% else %}
+		<h1 >Enforcados INTIN</h1>
+  		<div style="margin-top: 40px;">
+  		<h4>Faça login ou crie uma nova conta</h4><br>
+  		<button onclick="window.location.href='/accounts/login'" style="margin: 5px;" class="btn btn-success">Login</button>
+  		<button onclick="window.location.href='/signup'" style="margin: 5px;" class="btn btn-primary">Cadastre-se</button>
+  		</div>
+	{% endif %}
+	
+</div>
+
+
+
+{% endblock %}

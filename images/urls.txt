@@ -1,0 +1,7 @@
+forca1: https://uploaddeimagens.com.br/images/001/577/179/full/forca1.png?1535154206
+forca2: https://uploaddeimagens.com.br/images/001/577/187/full/forca2.png?1535154329
+forca3: https://uploaddeimagens.com.br/images/001/577/189/full/forca3.png?1535154364
+forca4: https://uploaddeimagens.com.br/images/001/577/190/full/forca4.png?1535154401
+forca5: https://uploaddeimagens.com.br/images/001/577/192/full/forca5.png?1535154444
+forca6: https://uploaddeimagens.com.br/images/001/577/193/full/forca6.png?1535154470
+forca7: https://uploaddeimagens.com.br/images/001/577/195/full/forca7.png?1535154500

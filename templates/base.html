@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Base file{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+  <style>
+  	
+  	.input-margin{
+  		margin-top: 30px;
+  	}
+  	body {
+   	background-image: url('https://chupacdn.s3.amazonaws.com/catalog/product/cache/5/thumbnail/1280x/17f82f742ffe127f42dca9de82fb58b1/6/-/6-vector-game-backgrounds-8003_imgs_8003_2.png');
+   	background-color: #cccccc;
+}
+
+#main{
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+  border-radius: 50px;
+}
+#main3{
+  width: 700px;
+  height: 300px;
+  margin: 30px auto;
+  border-radius: 50px;
+}
+
+#main2{
+  width: 400px;
+  height: 460px;
+  margin: 50px auto;
+  border-radius: 50px;
+}
+#main4{
+  width: 400px;
+  height: 200px;
+  margin: 50px auto;
+  border-radius: 50px;
+}
+
+.box {
+    width:300px;
+    height:300px;
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+}
+
+.block-color{
+	background-color: #ffffff;
+}
+h1{
+	font-family: 'Montserrat', sans-serif;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
+label{
+	font-family: 'Montserrat', sans-serif;
+}
+h4{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.title-h1{
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+}
+
+.text-relative{
+    background-color: #ffffff;
+    max-width: 300px;
+    border-radius: 50px;
+    margin: 0px auto;
+    padding: 0px;
+    word-break: break-all; 
+}
+
+  </style>
+</head>
+<body>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

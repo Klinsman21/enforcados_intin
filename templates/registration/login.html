@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="top-buffer">    
+    <div class="mx-auto" style="width: 300px;">
+        <div class="col-sm-20 text-center">
+        <img class="img-fluid" alt="Responsive image" height="90" width="90" src="https://wa1.narvii.com/static/img/user-icon-placeholder.png" >
+        <h1>Aréa de login</h1>
+        <div style="margin-top:20px;">
+        <form method="POST" class="form-signin">
+                {% csrf_token %}
+
+                <label class="container-fluid">Nome de usuário:</label>
+                <input type="text" name="username" id="id_username" required class="form-control">
+
+                <label class="container-fluid">Senha:</label>
+                <input type="password" name="password" id="id_password" required class="form-control"><br>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                <button style="margin: 5px;" onclick="window.location.href='/'" name="submit" value="b2"  class="btn btn-secundary">Home</button>
+                </div>
+                
+        </form>
+     </div>   
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+	
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Over{% endblock %}
+
+{% block content %}
+
+
+    <div id="main" class="block-color" style="text-align: center;">
+    {% if user.is_authenticated %}
+        <div class="title-h1" ">
+        <h1 >Você venceu aeeeee</h1>
+        <h3>Ganhou 10 pontos</h3>
+        </div>
+        <META http-equiv="refresh" content="2;URL=/">
+    {% else %}
+        <META http-equiv="refresh" content="0;URL=/">
+    {% endif %}
+    
+</div>
+{% endblock %}

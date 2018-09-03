@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Comentário{% endblock %}
+
+{% block content %}
+
+
+<div id="main4" class="block-color" style="text-align: center;">
+    {% if user.is_authenticated %}
+        <h1>Confirme a criação</h1><br>
+        <form method="post" class="form-signin">
+            {% csrf_token %}
+            <div style="display: none;">
+            {{ form.as_p }}
+            </div>
+            <button class="btn btn-secundary" type="submit">Confirmo</button>
+        </form> <br>
+        <button onclick="window.location.href='/'" class="btn btn-primary" style="display: inline;">Home</button>
+        
+    {% else %}
+        <META http-equiv="refresh" content="0;URL=/"> 
+    {% endif %}
+    
+</div>
+
+{% endblock %}

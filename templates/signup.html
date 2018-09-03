@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <div class="top-buffer">
+    <div class="mx-auto" style="width: 300px;">    
+        <form method="POST">
+        		{% csrf_token %}
+                <div class="col-sm-20 text-center">
+                <img class="img-fluid" alt="Responsive image" height="100" width="100" src="https://cdn2.iconfinder.com/data/icons/ourea-icons/256/User_Accounts_256x256-32.png" >
+
+                <input style="margin-top: 10px;"  "type="text" name="username" class="form-control" placeholder="UserName" required id="id_username">
+                <p>Não use caracters especiais como: @, #, $</p><br>
+                
+                <input required type="password" name="password1" class="form-control" placeholder="Senha" id="id_password1"><br>
+                <ul style="text-align: left;">
+                	<li>Sua senha não pode ser tão parecida com suas outras informações pessoais.</li>
+                	<li>Sua senha precisa conter pelo menos 8 caracteres.</li>
+                	<li>Sua senha não pode ser uma senha habitualmente utilizada.</li>
+                	<li>Sua senha não pode ser inteiramente numérica.</li>
+                </ul>
+                 
+
+                <input required type="password" name="password2" class="form-control" placeholder="Confirme Senha" id="id_password2"><br>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <button style="margin: 5px; " type="submit" name="submit" class="btn btn-primary">Cadastrar</button>
+
+                <button onclick="window.location.href='/'" style="margin: 5px;" class="btn btn-secundary">Home</button>
+
+                </div>
+                </div>
+                <div class="form-group">
+
+        </form>
+{% endblock %}

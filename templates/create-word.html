@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% block title %}Criar Palavra{% endblock %}
+
+{% block content %}
+
+<div id="main2" class="block-color" style="text-align: center;">
+<div class="top-buffer">    
+    <div class="mx-auto" style="width: 300px;">
+        <div class="col-sm-20 text-center" >
+        <img style="margin-top: 10px;" class="img-fluid" alt="Responsive image" height="90" width="90" src="https://cdn6.aptoide.com/imgs/3/0/8/3085b9e7d65213201733dd0088da037a_icon.png?w=240" >
+        <h1>Criação de palavras</h1>
+        <div style="margin-top:20px;">
+        <form method="POST" class="form-signin">
+                {% csrf_token %}
+                <p>Atenção use apenas letras minúsculas</p>
+                <label class="container-fluid">Palavra:</label>
+                <input type="text" name="palavra" maxlength="150" required="" id="id_palavra"><br>
+                <label class="container-fluid">Dica:</label>
+                <input type="text" name="dica" maxlength="150" required="" id="id_dica"><br>
+                <br><button type="submit" name="submit" class="btn btn-primary">Criar palavra</button>
+                <button style="margin: 5px;" onclick="window.location.href='/'"  class="btn btn-secundary">Home</button>
+                </div>
+                
+        </form>
+     </div>   
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
